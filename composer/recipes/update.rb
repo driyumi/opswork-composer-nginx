@@ -14,5 +14,6 @@ node[:deploy].each do |application, deploy|
     only_if { ::File.exists?("#{deploy[:deploy_to]}/current/composer.json") }
 #	cwd "#{deploy[:deploy_to]}/current"
 #	command "composer install"
+Chef::Log.info("Running composer update on #{deploy[:deploy_to]}")
   end
 end 

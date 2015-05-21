@@ -12,7 +12,7 @@ node[:deploy].each do |application, deploy|
     php composer.phar install --no-dev --no-interaction --optimize-autoloader
     EOH
     only_if { ::File.exists?("#{deploy[:deploy_to]}/current/composer.json") }
-	cwd "#{deploy[:deploy_to]}/current"
-	command "composer install"
+#	cwd "#{deploy[:deploy_to]}/current"
+#	command "composer install"
   end
 end 
